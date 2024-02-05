@@ -1,0 +1,131 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-left": 20,
+    "margin-right": 20,
+    "modules-left": ["custom/wlogout","hyprland/workspaces"],
+    "modules-center": ["custom/separator-right", "custom/spotify", "custom/separator-left"],
+    "modules-right": ["group/stats", "group/notifications","clock"],
+    "hyprland/window": {
+        "format": "{}"
+    },
+"custom/wlogout": {
+	"format": "<span font='22'></span>",
+            "interval": "once",
+            "on-click": "wlogout -c 5 -r 5 -p layer-shell",
+    },
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+            },
+            "on-scroll-up": "hyprctl dispatch workspace e+1",
+            "on-scroll-down": "hyprctl dispatch workspace e-1"
+        },
+        "tray": {
+            "icon-size" :20,
+            "spacing": 10
+        },
+        "clock": {
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format": "{:%a %d, %b \n %I:%M %p }",
+            "format-alt": "{:%Y-%m-%d}"
+        },
+        "cpu": {
+            "format": " {usage}%",
+            "on-click": "kitty btop",
+            "tooltip": true
+        },
+        "memory": {
+            "format": "󰍛 {}%"
+        },
+        "temperature": {
+            "format": " {temperatureC}°C",
+        },
+        "custom/gpu-temperature": {
+            "exec": "nvidia-smi -q -i 0,1 -d TEMPERATURE | grep -oP 'GPU Current Temp\\s+:\\s+\\K\\d+'",
+            "format": " {}°C",
+            "return-type": "",
+            "interval": 1,
+            "on-click": "nvidia-settings",
+        },
+        "network": {
+            "interval": 1,
+            "format-wifi": " ",
+            "format-ethernet": "󰈀",
+            "tooltip-format": " {ifname} via {gwaddr}",
+            "format-linked": "󰈁{ifname} (No IP)",
+            "format-disconnected": " Disconnected",
+            "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        },
+        "pulseaudio": {
+            "format": "{icon} {volume}%",
+            "format-bluetooth": "{icon} {volume}%",
+            "format-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "default": ["", ""]
+            },
+            "scroll-step": 1,
+            "on-click": "pavucontrol",
+            "ignored-sinks": ["Easy Effects Sink"]
+        },
+        "bluetooth": {
+            "format": "",
+            "format-disabled": "", // an empty format will hide the module
+            "format-connected": " {num_connections}",
+            "tooltip-format": "{controller_alias}\t{controller_address}",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+            "on-click": "blueman-manager"
+        },
+        "custom/separator-right": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/separator-left": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/github": {
+            "format": " {}",
+            "return-type": "json",
+            "interval": 60,
+            "exec": "$HOME/.config/waybar/scripts/github.sh",
+            "on-click": "xdg-open https://github.com/notifications"
+        },
+       "custom/updates": {
+		"format": "  {}",
+		"tooltip-format": "{}",
+		"escape": true,
+		"return-type": "json",       
+		"exec": "~/.config/waybar/scripts/updates.sh",
+		"restart-interval": 60,
+		"tooltip": false
+       },
+        "custom/spotify": {
+            "exec": "$HOME/.config/waybar/scripts/spotify.sh",
+            "max-length": 40,
+            "format": " {}",
+            "tooltip": false
+        },
+        "group/stats": {
+            "orientation": "horizontal",
+            "modules": ["custom/gpu-temperature", "cpu", "memory"]
+        },
+        "group/notifications": {
+            "orientation": "horizontal",
+            "modules": [
+                "pulseaudio",
+                "network",
+                "bluetooth",
+                "custom/github",
+                "custom/updates",
+            ]
+        }
+}
