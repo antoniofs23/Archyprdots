@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# added to configure github ssh keys
 fish_ssh_agent
 
 # >>> conda initialize >>>
