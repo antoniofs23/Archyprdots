@@ -12,34 +12,28 @@
 * {
   font-family: Hack Bold;
   font-size: 18px;
-  border-radius: 1em;
+  border-radius: 1.5em;
 }
 
 /* Primary monitor configuration */
+#stats,
 #notifications,
 #workspaces {
   padding-left: 4px;
   padding-right: 4px;
   color: @peach;
   font-weight: bold;
-  background-color: @surface0;
+  background-color: transparent;
 }
 
 /* Wlr/workspaces configuration  */
 #window,
 #workspaces {
-  color: @peach;
+  color: transparent;
 }
 
 #workspaces label {
   font-size: 20px;
-}
-
-#workspaces button {
-  padding: 0 0.25em;
-  background-color: @surface0;
-  color: @text;
-  margin: 0.25em;
 }
 
 #workspaces button.active {
@@ -76,14 +70,6 @@ label:focus {
   background-color: #000000;
 }
 
-button {
-  /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px transparent;
-  /* Avoid rounded borders under each button name */
-  border: none;
-  border-radius: 0;
-}
-
 /* Remove border from parent waybar */
 box {
   border: none;
@@ -104,16 +90,16 @@ box {
 #bluetooth,
 #pulseaudio,
 #network {
-  padding: 0 0.75em;
+  padding: 0 0.5em;
 }
 
 /* Unique colors for modules */
 #cpu {
-  color: @red;
+  color: @blue;
 }
 
 #memory {
-  color: @yellow;
+  color: @blue;
 }
 
 #custom-gpu-temperature,
@@ -122,18 +108,22 @@ box {
 }
 
 #network {
-  color: @yellow;
+  color: @red;
 }
 
 #pulseaudio {
-  color: #cad3f5;
+  color: @red;
 }
 
 #custom-github {
-  color: @blue;
+  color: @white;
 }
 
 #custom-updates {
+  color: @red;
+}
+
+#bluetooth {
   color: @red;
 }
 
@@ -164,7 +154,7 @@ box {
   font-size: 20px;
   padding-left: 1em;
   padding-right: 1em;
-  color: @text;
+  color: @green;
 }
 
 @keyframes blink {
