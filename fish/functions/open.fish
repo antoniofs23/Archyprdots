@@ -1,4 +1,4 @@
-function open --wraps=xdg-open --description 'alias open=xdg-open'
-  xdg-open $argv
+function open --wraps=thunar --description 'alias open=thunar'
+  thunar $argv
         
 end

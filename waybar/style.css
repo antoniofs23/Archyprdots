@@ -1,165 +1,181 @@
-/* @import "frappe.css"; */
-@import "macchiato.css";
+@define-color white      	#F2F2F2;
+@define-color black      	#000000;
+@define-color text       	#FFFFFF;
+@define-color lightgray  	#686868;
+@define-color darkgray   	#353535;
+@define-color red        	#b80404;
+@define-color teal		 	#017554;
+@define-color blue          #00236e;
+@define-color purple        #7e2979;
+@define-color aqua          #0094b2;
 
-/**
-* Custom styling for a catppuccin style waybar
-* Config settings listed in order from left -> right on bar
-* */
+@define-color transparent	rgba(0, 0, 0, 0.3);
+@define-color teal-trans	rgba(1, 117, 84, 0.5);
+@define-color cyan			rgba(53, 140, 169, 1);
 
-/**
-* Global configuration for theme 
-* */
+@define-color background-module     #282828;
+@define-color border-color          @color10;
+@define-color button-color          @color12;
+@define-color button-hover          @color11;
+
 * {
-  font-family: Hack Bold;
   font-size: 18px;
-  border-radius: 1.5em;
+  font-family: Jet Brain Mono;
 }
 
-/* Primary monitor configuration */
-#stats,
-#notifications,
-#workspaces {
-  padding-left: 4px;
-  padding-right: 4px;
-  color: @peach;
-  font-weight: bold;
-  background-color: transparent;
-}
-
-/* Wlr/workspaces configuration  */
-#window,
-#workspaces {
-  color: transparent;
-}
-
-#workspaces label {
-  font-size: 20px;
-}
-
-#workspaces button.active {
-  color: @blue;
-}
-
-#workspaces button.urgent {
-  background-color: @red;
-  color: @text;
-}
-
-/* window */
 window#waybar {
-  background: transparent;
-  color: @text;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  /*background: linear-gradient(0deg, @border-color, black);*/
+  /*background: rgba(1, 117, 84, 0.5);*/
+  background: rgba(28, 28, 28, 0.95);
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+#custom-powermenu {
+  background-color: @background-module;
+  font-size: 20px;
+  color: red;
+  border-radius: 25px;
+  padding: 0px 19px 0px 15px;
+  margin: 3px 3px 3px 3px;
+  opacity: 1;
+  border: 2px solid @border-color;
+}
+
+#custom-launcher {
+  background-color: @background-module;
+  font-size: 24px;
+  color: #1793d1;
+  border-radius: 25px;
+  padding: 0px 22px 0px 15px;
+  margin: 3px 3px 3px 3px;
+  opacity: 1;
+  border: 2px solid @border-color;
+}
+
+#custom-notification {
+  color: orange;
+  font-size: 14px;
+  padding: 0px 10px 0px 10px;
+}
+
+#custom-updates {
+  color: navajowhite;
+  padding: 0px 10px 0px 10px;
+}
+
+#custom-themeswitcher,
+#custom-wallchange,
+#clock,
+#tray {
+  color: aliceblue;
+  padding: 0px 10px 0px 10px;
+}
+
+#pulseaudio,
+#memory,
+#cpu {
+  font-size: 14px;
+  padding: 0px 10px 0px 10px;
+}
+
+#window {
+  background-color: #282828;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 0px 10px 0px 10px;
+  margin: 3px 3px 3px 3px;
+  opacity: 0.8;
+  border: 2px solid @border-color;
+  color: #ffffff;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+  border: 0px;
+}
+
+#workspaces {
+  background: @background-module;
+  margin: 3px 3px 3px 3px;
+  padding: 0px 1px;
+  border-radius: 25px;
+  border: 2px solid @border-color;
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.8;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+#workspaces button {
+  padding: 1px 1px;
+  margin: 3px 3px;
+  border-radius: 15px;
+  border: 0px;
+  color: @color13;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+}
+
+#workspaces button.active,
+#workspaces button.visible {
+  color: #ffffff;
+  background: @button-color;
+  border-radius: 15px;
+  border: 1px solid @border-color;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+#workspaces button.empty {
+  color: #ffffff;
+  /*background: @button-color;
+    border-radius: 15px;
+    border: 1px solid @border-color;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;*/
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  color: #ffffff;
+  background: @button-hover;
+  border: 1px solid @border-color;
+  border-radius: 15px;
+  opacity: 1;
 }
 
 tooltip {
-  background: @base;
-  border: 1px solid @blue;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: @border-color;
+  opacity: 0.8;
+  padding: 20px;
+  margin: 0px;
 }
 
 tooltip label {
   color: white;
 }
 
-label:focus {
-  background-color: #000000;
-}
-
-/* Remove border from parent waybar */
-box {
-  border: none;
-}
-
-/* Add spacing for right side modules */
-#tray {
-  padding: 0 1em;
-}
-
-#custom-updates,
-#custom-github,
-#cpu,
-#temperature,
-#custom-gpu-temperature,
-#memory,
-#disk,
-#bluetooth,
-#pulseaudio,
-#network {
-  padding: 0 0.5em;
-}
-
-/* Unique colors for modules */
-#cpu {
-  color: @blue;
-}
-
-#memory {
-  color: @blue;
-}
-
-#custom-gpu-temperature,
-#temperature {
-  color: @blue;
-}
-
-#network {
-  color: @red;
-}
-
 #pulseaudio {
-  color: @red;
+  color: @color7;
 }
-
-#custom-github {
-  color: @white;
-}
-
-#custom-updates {
-  color: @red;
-}
-
-#bluetooth {
-  color: @red;
-}
-
 #pulseaudio.muted {
-  background-color: #90b1b1;
-  color: #2a5c45;
+  color: red;
 }
-
-#temperature.critical {
-  background-color: #eb4d4b;
+#memory {
+  color: #2aa198;
 }
-
-#clock {
-  font-size: 15px;
-  font-weight: 700;
+#cpu {
+  color: #6c71c4;
 }
-
-/* Custom styling for the logout icon on end */
-#custom-wlogout {
-  font-size: 1em;
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-  color: @blue;
+#battery {
+  color: #859900;
 }
-
-#custom-separator-right,
-#custom-separator-left {
-  font-size: 20px;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: @green;
-}
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: #000000;
-  }
+#disk {
+  color: #b58900;
 }
