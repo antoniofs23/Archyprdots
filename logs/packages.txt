@@ -93,7 +93,7 @@ exiv2 0.28.1-1
 exo 4.18.0-1
 expat 2.5.0-1
 expressvpn 3.63.0.4_1-1
-eza 0.18.0-1
+eza 0.18.2-1
 faac 1.30-4
 faad2 2.11.1-1
 fakeroot 1.33-2
@@ -193,9 +193,9 @@ hidapi 0.14.0-2
 highway 1.0.7-1
 htop 3.3.0-1
 http-parser 2.9.4-1
-hwdata 0.378-1
+hwdata 0.379-1
 hwloc 2.10.0-1
-hyprland 0.35.0-1
+hyprland 0.35.0-2
 hyprlang 0.2.1-4
 iana-etc 20231228-1
 icu 74.2-1
@@ -328,7 +328,7 @@ libassuan 2.5.6-1
 libasyncns 1:0.8+r3+g68cd5af-2
 libatasmart 0.19-6
 libavc1394 0.5.4-6
-libavif 1.0.3-2
+libavif 1.0.4-1
 libavtp 0.2.0-2
 libayatana-appindicator 0.5.93-1
 libayatana-indicator 0.9.4-1
@@ -401,7 +401,7 @@ libinput 1.25.0-1
 libinstpatch 1.1.6-2
 libisl 0.26-1
 libjpeg-turbo 3.0.2-2
-libjxl 0.9.1-1
+libjxl 0.9.2-1
 libkate 0.4.1-9
 libksba 1.6.5-1
 liblc3 1.0.4-1
@@ -464,7 +464,7 @@ librsync 1:2.3.4-1
 libsamplerate 0.2.2-2
 libsasl 2.1.28-4
 libseccomp 2.5.5-2
-libsecret 0.21.2-1
+libsecret 0.21.3-1
 libshout 1:2.4.6-2
 libsigc++ 2.12.1-1
 libsm 1.2.4-1
@@ -477,7 +477,7 @@ libsrtp 1:2.5.0-1
 libssh 0.10.6-2
 libssh2 1.11.0-1
 libstemmer 2.2.0-2
-libsysprof-capture 45.1-2
+libsysprof-capture 45.2-1
 libtasn1 4.19.0-1
 libteam 1.32-1
 libtermkey 0.22-2
