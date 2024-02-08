@@ -1,198 +1,175 @@
 // -*- mode: json -*-
 
 {
-	"layer": "top",
-	"position": "top",
-	"height": 14,
-		
-	"modules-left": [
-		
-		"custom/launcher",
-		"hyprland/window",
-    "hyprland/workspaces",
-		"custom/updates",
-		"custom/notification"
+  "layer": "top",
+  "position": "top",
+  "height": 14,
+  "modules-left": ["custom/launcher", "hyprland/window", "hyprland/workspaces"],
 
-	],
+  "modules-center": ["custom/spotify"],
 
-	"modules-center": [
-		
-		"custom/separator-right",
-    "custom/spotify",
-    "custom/separator-eft"
-	
-	],
-		
-	"modules-right": [
-	
+  "modules-right": [
+    "custom/updates",
+    "custom/notification",
     "group/stats",
-		"tray",
-		"pulseaudio",
+    "pulseaudio",
     "bluetooth",
-		"clock",
-		"custom/powermenu",
-				
-	],
+    "clock",
+    "custom/powermenu"
+  ],
   "bluetooth": {
-            "format": "",
-            "format-disabled": "", // an empty format will hide the module
-            "format-connected": " {num_connections}",
-            "tooltip-format": "{controller_alias}\t{controller_address}",
-            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
-            "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-            "on-click": "blueman-manager",
-		        "icon-size": 15,
+    "format": "",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}",
+    "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager",
+    "icon-size": 15
   },
   "cpu": {
-      "format": " {usage}%",
-      "on-click": "kitty btop",
-		  "icon-size": 15,
-      "tooltip": true
+    "format": " {usage}%",
+    "on-click": "kitty btop",
+    "icon-size": 15,
+    "tooltip": false
   },
   "memory": {
-      "format": "󰍛 {}%",
-		  "icon-size": 15,
+    "format": "󰍛 {}%",
+    "icon-size": 15
   },
   "temperature": {
-      "format": " {temperatureC}°C",
-		  "icon-size": 15,
+    "format": " {temperatureC}°C",
+    "icon-size": 15
   },
   "custom/gpu-temperature": {
-      "exec": "nvidia-smi -q -i 0,1 -d TEMPERATURE | grep -oP 'GPU Current Temp\\s+:\\s+\\K\\d+'",
-      "format": " {}°C",
-		  "icon-size": 15,
-      "return-type": "",
-      "interval": 1,
-      "on-click": "nvidia-settings",
+    "exec": "nvidia-smi -q -i 0,1 -d TEMPERATURE | grep -oP 'GPU Current Temp\\s+:\\s+\\K\\d+'",
+    "format": " {}°C",
+    "icon-size": 15,
+    "return-type": "",
+    "interval": 1,
+    "on-click": "nvidia-settings"
   },
   "network": {
-      "interval": 1,
-      "format-wifi": " ",
-      "format-ethernet": "󰈀",
-		  "icon-size": 15,
-      "tooltip-format": " {ifname} via {gwaddr}",
-      "format-linked": "󰈁{ifname} (No IP)",
-      "format-disconnected": " Disconnected",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "interval": 1,
+    "format-wifi": " ",
+    "format-ethernet": "󰈀",
+    "icon-size": 15,
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "format-linked": "󰈁{ifname} (No IP)",
+    "format-disconnected": " Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "custom/updates": {
-		"format": "  {}",
-		"tooltip-format": "{}",
-		"icon-size": 15,
-		"escape": true,
-		"return-type": "json",       
-		"exec": "~/.config/waybar/scripts/updates.sh",
-		"restart-interval": 60,
-		"tooltip": false
+    "format": "  {}",
+    "tooltip-format": "{}",
+    "icon-size": 15,
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "restart-interval": 60,
+    "tooltip": false
   },
-   "custom/spotify": {
+  "custom/spotify": {
     "exec": "$HOME/.config/waybar/scripts/spotify.sh",
     "max-length": 40,
     "format": " {}",
-		"icon-size": 15,
+    "icon-size": 15,
     "tooltip": false
   },
-	"custom/powermenu": {
-		"format": "",
-		"on-click": "wlogout -c 5 -r 5 -p layer-shell",
-		"interval" : "once",
-		"icon-size": 20,
-	},
-	
-	"custom/launcher": {
-		"format": "󰣇",
-		"icon-size": 20,
-	},
-	
-	"hyprland/workspaces" : {
-        "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{}",
-        "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
-        },
-        "persistent-workspaces": {
-             "*": 10
-        }       
-    },
-
-	"clock": {
-		 "format": "{:%I:%M %p}",
-        "format-alt": "{:%I:%M %p 󰃭 %d/%m/%y}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b>{}</b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-	},
-	
-	"pulseaudio": {
-		"format": "{icon} {volume}",
-		"format-bluetooth": "{icon} ",
-		"format-muted": " 󰖁 ",
-		"icon-size": 15,
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				"",
-				"󰕾",
-				"",
-			]
-		},
-		"scroll-step": 1,
-		"on-click": "pavucontrol"
-	},
-
-	"tray": {
-		"icon-size": 16,
-		"spacing": 10
-		
-	},
-
-	"hyprland/window": {
-				"format": "{initialClass}",
-				"tooltip": true,
-				"rewrite": {
-            "firefox": "Mozilla Firefox",
-            "sublime_text": "Sublime Text",
-            "kitty": "Terminal",
-            "org.gnome.Nautilus": "Archivos",
-            "com.obsproject.Studio": "OBS Studio",
-            "Gimp-2.10": "Gimp",
-            "com.github.tchx84.Flatseal": "Flatseal",
-            "com.github.wwmm.easyeffects": "EasyEffects",
-            "discord": "Discord",
-            "org.gnome.Software": "Tienda de Software",
-            "org.gnome.Music": "Reproductor de Música",
-            "thunderbird": "Thunderbird",
-            "org.telegram.desktop": "Telegram"
-        },
-        "separate-outputs": true
-    },
-  "group/stats": {
-          "orientation": "horizontal",
-          "modules": ["custom/gpu-temperature", "cpu", "memory", "network"]
+  "custom/powermenu": {
+    "format": "",
+    "on-click": "wlogout -c 5 -r 5 -p layer-shell",
+    "interval": "once",
+    "icon-size": 20
   },
 
-	"custom/notification": {
+  "custom/launcher": {
+    "format": "󰣇",
+    "icon-size": 20
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 10
+    }
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%I:%M %p 󰃭 %d/%m/%y}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}",
+    "format-muted": " 󰖁 ",
+    "icon-size": 15,
+    "format-icons": {
+      "headphones": "",
+      "default": ["", "", "󰕾", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "hyprland/window": {
+    "format": "{initialClass}",
+    "tooltip": true,
+    "rewrite": {
+      "firefox": "Mozilla Firefox",
+      "sublime_text": "Sublime Text",
+      "kitty": "Terminal",
+      "org.gnome.Nautilus": "Archivos",
+      "com.obsproject.Studio": "OBS Studio",
+      "Gimp-2.10": "Gimp",
+      "com.github.tchx84.Flatseal": "Flatseal",
+      "com.github.wwmm.easyeffects": "EasyEffects",
+      "discord": "Discord",
+      "org.gnome.Software": "Tienda de Software",
+      "org.gnome.Music": "Reproductor de Música",
+      "thunderbird": "Thunderbird",
+      "org.telegram.desktop": "Telegram"
+    },
+    "separate-outputs": true
+  },
+  "group/stats": {
+    "orientation": "horizontal",
+    "modules": ["custom/gpu-temperature", "cpu", "memory", "network"]
+  },
+
+  "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
@@ -209,4 +186,5 @@
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "escape": true
-  }}
+  }
+}
