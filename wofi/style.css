@@ -1,87 +1,50 @@
 window {
-    opacity: 0.9;
-    margin: 0px;
-    border: 5px solid #1e1e2e;
-    background-color: transparent;
-    border-radius: 15px;
-    outline: none;
+  margin: 0px;
+  background-color: #282828;
+  border-radius: 30px;
+  border: 2px solid #928374;
 }
 
 #input {
-    padding: 4px;
-    margin: 4px;
-    padding-left: 20px;
-    border: none;
-    color: #cdd6f4;
-    font-weight: bold;
-    background-color: #1e1e2e;
-    background: ;
-   	outline: none;
-    border-radius: 15px;
-    margin: 10px;
-    margin-bottom: 2px;
-    outline: none;
-}
-#input:focus {
-    border: 0px solid #1e1e2e;
-    margin-bottom: 0px;
-    outline: none;
+  margin: 5px;
+  border: none;
+  color: #ebdbb2;
+  background-color: #1d2021;
+  border-radius: 30px;
 }
 
 #inner-box {
-    margin: 4px;
-    border: 10px solid #1e1e2e;
-    color: #cdd6f4;
-    font-weight: bold;
-    outline: none;
-    background-color: #1e1e2e;
-    border-radius: 15px;
+  margin: 5px;
+  border: none;
+  background-color: #282828;
+  border-radius: 30px;
 }
 
 #outer-box {
-    margin: 0px;
-    border: none;
-    border-radius: 15px;
-    background-color: #1e1e2e;
-    outline: none;
+  margin: 15px;
+  border: none;
+  background-color: #282828;
 }
 
 #scroll {
-    margin-top: 5px;
-    border: none;
-    border-radius: 15px;
-    margin-bottom: 5px;
-    outline: none;
-    /* background: rgb(255,255,255); */
+  margin: 0px;
+  border: none;
 }
 
-#img:selected {
-    background-color:  #A020F0;
-    border-radius: 15px;
-    outline: none;
-}
-
-#text:selected {
-    color: #cdd6f4;
-    margin: 0px 0px;
-    border: none;
-    border-radius: 15px;
-    background-color: #A020F0;
-    outline: none;
-}
-
-#entry {
-    margin: 0px 0px;
-    border: 0px;
-    border-radius: 15px;
-    background-color: transparent;
-    outline: none;
+#text {
+  margin: 5px;
+  border: none;
+  color: #ebdbb2;
 }
 
 #entry:selected {
-    margin: 0px 0px;
-    border: none;
-    border-radius: 15px;
-    outline: none;
-    background-color:  #A020F0;
+  background-color: #1d2021;
+  border-radius: 20px;
+  outline: none;
+}
+
+#entry:selected * {
+  background-color: #1d2021;
+  border-radius: 20px;
+  outline: none;
 }
