@@ -17,3 +17,5 @@ else
 end
 # <<< conda initialize <<<
 
+
+fish_add_path /home/ant/.spicetify

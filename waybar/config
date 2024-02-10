@@ -9,23 +9,29 @@
   "modules-center": ["custom/spotify"],
 
   "modules-right": [
+    "custom/weather",
     "custom/updates",
     "custom/notification",
     "group/stats",
     "pulseaudio",
-    "bluetooth",
+    "custom/bluetooth",
     "clock",
     "custom/powermenu"
   ],
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "", // an empty format will hide the module
-    "format-connected": " {num_connections}",
-    "tooltip-format": "{controller_alias}",
-    "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueman-manager",
-    "icon-size": 15
+  "custom/weather" : {
+        "format" : "{}",
+        "interval" : 30,
+        "exec" : "python ~/.config/waybar/scripts/accu-weather.py",
+        "return-type" : "json",
+        "tooltip": true
+    },
+  "custom/bluetooth": {
+        "format": "",
+        "interval" : 30,
+        "exec" : "python ~/.config/waybar/scripts/show-bt-power.py",
+        "return-type" : "json",
+        "tooltip": true,
+        "on-click": "blueman-manager"
   },
   "cpu": {
     "format": " {usage}%",
