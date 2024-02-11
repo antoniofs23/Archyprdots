@@ -9,9 +9,9 @@
   "modules-center": ["custom/spotify"],
 
   "modules-right": [
-    "custom/weather",
     "custom/updates",
     "custom/notification",
+    "custom/weather",
     "group/stats",
     "pulseaudio",
     "custom/bluetooth",

@@ -21,20 +21,23 @@ keep = OrderedDict((device, dev.index(device)) for device in dev)
 keepIdx = list(keep.values())
 
 # define kept device models and battery percentage
-model, battery = [], []
 for idx in keepIdx:
-    model.append(dev[idx])
-    battery.append(perc[idx])
+    
+    # clean str with regex
+    patterns = ["'", "\)","\\","",'n', " "] 
+    temp = re.sub("|".join(patterns),"",str(dev[idx]))
+    model = re.sub(r"\\",'',temp)
 
-# clean str with regex
-patterns = ["'", "\)","\\","", " "] 
-model = re.sub("|".join(patterns),"",str(model[0]))
-patterns = "['', ' ', '\\', 'n']"
-battery = re.sub(patterns, '', str(battery[0]))
-battery = re.sub(r"\\",'',battery) # for some reason only the first / is being removed
+    patterns = "['', ' ', '\\', 'n']"
+    temp = re.sub(patterns, '', str(perc[idx]))
+    battery = re.sub(r"\\",'',temp) 
+    
+    # concat the model + battery
+    if data == {}:
+        data['tooltip'] = f"\n{model}': '{battery}\n"
+    else:
+        data['tooltip'] +=f"{model}': '{battery}\n"
 
-data['tooltip'] = f"model: {model}\n"
-data['tooltip'] +=f"battery: {battery}"
 
 print(json.dumps(data))
 
