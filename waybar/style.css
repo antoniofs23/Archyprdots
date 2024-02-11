@@ -75,6 +75,7 @@ window#waybar {
 }
 
 #custom-bluetooth,
+#custom-spotify,
 #custom-gpu-temperature,
 #custom-weather,
 #network,
@@ -107,14 +108,14 @@ window#waybar.empty #window {
 }
 
 #workspaces {
-  background: @background-module;
+  background: #282828;
   margin: 3px 3px 3px 3px;
   padding: 0px 1px;
   border-radius: 25px;
   border: 2px solid #ebdbb2;
   font-weight: bold;
   font-style: normal;
-  opacity: 0.8;
+  opacity: 1;
   font-size: 16px;
   color: #ebdbb2;
 }
