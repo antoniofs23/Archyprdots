@@ -46,7 +46,7 @@ btrfs-progs 6.7.1-1
 bzip2 1.0.8-5
 c-ares 1.26.0-1
 ca-certificates 20220905-1
-ca-certificates-mozilla 3.97-1
+ca-certificates-mozilla 3.98-1
 ca-certificates-utils 20220905-1
 cairo 1.18.0-1
 cairomm 1.14.5-1
@@ -335,10 +335,10 @@ lib32-libxss 1.2.4-1
 lib32-libxxf86vm 1.1.5-1
 lib32-llvm-libs 16.0.6-2
 lib32-lm_sensors 1:3.6.0.r41.g31d1f125-2
-lib32-mesa 1:23.3.5-1
+lib32-mesa 1:24.0.1-1
 lib32-ncurses 6.4_20230520-1
 lib32-nspr 4.35-2
-lib32-nss 3.97-1
+lib32-nss 3.98-1
 lib32-openssl 1:3.2.1-1
 lib32-p11-kit 0.25.3-1
 lib32-sqlite 3.45.0-1
@@ -423,7 +423,7 @@ libglvnd 1.7.0-1
 libgme 0.6.3-4
 libgpg-error 1.47-1
 libgphoto2 2.5.31-1
-libgtop 2.41.2-1
+libgtop 2.41.3-1
 libgudev 238-1
 libgusb 0.4.8-1
 libhandy 1.8.3-1
@@ -595,12 +595,12 @@ libyaml 0.2.5-2
 libyuv r2426+464c51a0-1
 licenses 20240206-1
 lilv 0.24.24-1
-linux 6.7.4.arch1-1
+linux 6.7.5.arch1-1
 linux-api-headers 6.7-1
 linux-firmware 20240115.9b6d0b08-2
 linux-firmware-whence 20240115.9b6d0b08-2
-linux-headers 6.7.4.arch1-1
-linux-lts 6.6.16-1
+linux-headers 6.7.5.arch1-1
+linux-lts 6.6.17-1
 llvm 16.0.6-1
 llvm-libs 16.0.6-1
 lm_sensors 1:3.6.0.r41.g31d1f125-2
@@ -620,7 +620,7 @@ man-db 2.12.0-1
 md4c 0.5.2-1
 mdadm 4.2-2
 media-player-info 24-2
-mesa 1:23.3.5-1
+mesa 1:24.0.1-1
 meson 1.3.2-1
 minizip 1:1.3.1-1
 mjpegtools 2.2.1-2
@@ -644,13 +644,13 @@ ninja 1.11.1-3
 nlopt 2.7.1-8
 nm-connection-editor 1.36.0-1
 node-gyp 10.0.1-1
-nodejs 21.6.1-1
+nodejs 21.6.2-1
 nodejs-nopt 7.2.0-1
 noto-fonts-emoji 1:2.042-1
 npm 10.4.0-2
 npth 1.6-4
 nspr 4.35-2
-nss 3.97-1
+nss 3.98-1
 numactl 2.0.18-1
 nvidia-dkms 545.29.06-4
 nvidia-settings 545.29.06-1
@@ -758,7 +758,7 @@ python-cachetools 5.3.2-2
 python-cairo 1.26.0-1
 python-cffi 1.16.0-1
 python-charset-normalizer 3.3.2-1
-python-coverage 6.5.0-5
+python-coverage 7.4.1-1
 python-cryptography 41.0.7-1
 python-fastjsonschema 2.19.1-1
 python-gobject 3.46.0-1
@@ -792,7 +792,7 @@ python-pygments 2.17.2-1
 python-pyproject-hooks 1.0.0-5
 python-pyxdg 0.28-2
 python-requests 2.31.0-1
-python-setuptools 1:69.0.3-1
+python-setuptools 1:69.0.3-2
 python-six 1.16.0-8
 python-steam 1.4.4-2
 python-tomli 2.0.1-3
@@ -825,7 +825,7 @@ qt5-webengine 5.15.16-3
 qt5-websockets 5.15.12+kde+r2-1
 qt5-x11extras 5.15.12-1
 qt6-5compat 6.6.2-1
-qt6-base 6.6.2-3
+qt6-base 6.6.2-4
 qt6-charts 6.6.2-1
 qt6-declarative 6.6.2-1
 qt6-multimedia 6.6.2-1
@@ -855,7 +855,7 @@ rubberband 3.3.0-1
 rustup 1.26.0-5
 sassc 3.6.2-4
 sbc 2.0-1
-scdoc 1.11.2-5
+scdoc 1.11.3-1
 sdbus-cpp 1.4.0-1
 sdl2 2.30.0-1
 seatd 0.8.0-1
