@@ -65,6 +65,7 @@ clucene 2.3.3.4-14
 clutter 1.26.4-2
 clutter-gtk 1.8.4-3
 cmake 3.28.3-1
+code 1.86.2-1
 cogl 1.22.8-2
 colord 1.4.7-2
 colord-gtk 0.3.0-2
@@ -885,6 +886,7 @@ readline 8.2.010-1
 recode 3.7.14-1
 redland 1:1.0.17-8
 rhash 1.4.4-1
+ripgrep 14.1.0-1
 rofi 1.7.5-2
 rsync 3.2.7-6
 rtkit 0.13-2
